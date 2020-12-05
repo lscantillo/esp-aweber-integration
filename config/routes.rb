@@ -1,3 +1,13 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root 'subscribe#index'
+   # Api Versions Routes
+  # Api V1 ../api/v1/..
+
+  namespace :api, defaults: {format: 'json'} do
+    namespace :v1 do
+      post 'new_lead' => 'subscribe#new_lead'
+    end
+
+  end
+  
 end
