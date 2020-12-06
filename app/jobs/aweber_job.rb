@@ -3,5 +3,7 @@
 class AweberJob < ApplicationJob
   def perform
     puts '***** I run every minute *****'
+    # UserService::SearchNewSubscriber.new().call
+    
   end
 end

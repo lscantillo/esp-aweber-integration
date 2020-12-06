@@ -29,7 +29,7 @@ module AweberService
       @client_secret = ENV['CLIENT_SECRET']
     end
 
-    def json_data(email,name,phone,receive_mail,send_info)
+    def json_data(email,name,phone,receive_mail)
       
       data_user =  {
               "email" => email,

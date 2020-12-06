@@ -23,7 +23,8 @@ gem 'sidekiq', '~> 6.1.2'
 gem 'redis', '~> 4.2.0'
 # Use http client
 gem 'http'
-gem 'sidekiq-scheduler'
+#gem 'sidekiq-scheduler'
+gem 'sidekiq-cron'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
