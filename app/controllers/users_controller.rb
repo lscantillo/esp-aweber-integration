@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show]
   def index
+    user = User.last
+    puts "****************************************"
+    puts AweberService::AddSubscriber.new(user).call
+
   end
 
   def new
