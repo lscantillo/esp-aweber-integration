@@ -20,7 +20,10 @@ gem 'jbuilder', '~> 2.7'
 # Sidekiq Gem
 gem 'sidekiq', '~> 6.1.2'
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
+gem 'redis', '~> 4.2.0'
+# Use http client
+gem 'http'
+gem 'sidekiq-scheduler'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

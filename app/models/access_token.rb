@@ -1,0 +1,5 @@
+class AccessToken < ApplicationRecord
+
+ 
+
+end

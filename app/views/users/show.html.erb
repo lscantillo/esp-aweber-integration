@@ -1,0 +1,45 @@
+<div class="container py-5">
+<p id="notice"><%= notice %></p>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">User</h2>
+          <p class="card-text">User Information.</p>
+            <div class='form-group'>
+              <div class="field">
+                <strong>Name:</strong>
+              </div>
+
+              <div class="field">
+                <%= @user.name %>
+              </div>
+
+              <div class="field">
+                <strong>Email:</strong>
+              </div>
+
+              <div class="field">
+                <%= @user.email %>
+              </div>
+
+              <div class="field">
+                <strong>Phone:</strong>
+              </div>
+
+              <div class="field">
+                <%= @user.phone %>
+              </div>
+
+              <div class="field">
+              <strong>Would you like to receive emails from us?:</strong>
+                <%= @user.receive_mail %>
+              </div>
+              <div class="field">
+               <br>
+              <%= link_to 'Back', root_path,:class=> 'btn btn-secondary' %>
+        </div>
+      </div> 
+    </div>
+  </div>
+</div>
