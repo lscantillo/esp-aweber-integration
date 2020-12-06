@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: esp_aweber_integration_production
-  username: esp_aweber_integration
-  password: <%= ENV['ESP_AWEBER_INTEGRATION_DATABASE_PASSWORD'] %>
+  database: <%= ENV['DATABASE_URL'] %>
+  #username: esp_aweber_integration
+  #password: <%= ENV['ESP_AWEBER_INTEGRATION_DATABASE_PASSWORD'] %>
