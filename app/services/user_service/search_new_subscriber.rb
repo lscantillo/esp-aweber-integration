@@ -2,16 +2,14 @@
 
 module UserService
   class SearchNewSubscriber
-    def initialize(point_id, user, badge_id = nil)
-      @point_id = point_id
-      @user = user
-      @badge_id = badge_id
+    def initialize
+      
     end
 
     def call
-      new_user = User.fin
+      @new_users = User.by_receive_mail(true).by_info_status_empty.count
+      UserService::ChangeUserInfo.new().call
     end
 
-    
   end
 end
