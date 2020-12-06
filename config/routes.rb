@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   require 'sidekiq/web'
   #require 'sidekiq-scheduler/web'
   mount Sidekiq::Web => '/sidekiq'
-  
+ 
   root 'users#index'
    # Api Versions Routes
   # Api V1 ../api/v1/..
