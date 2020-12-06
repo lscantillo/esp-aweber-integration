@@ -1,0 +1,62 @@
+<%= form_with(model: @user, local: true) do |form| %>
+  
+<div class="container py-5">
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">User</h2>
+          <p class="card-text">User Information.</p>
+            <div class='form-group'>
+              <div class="field">
+                <%= form.label :name %>
+              </div>
+
+              <div class="field">
+                <%= form.text_field :name %>
+              </div>
+
+              <div class="field">
+                <%= form.label :email %>
+              </div>
+
+              <div class="field">
+                <%= form.text_field :email %>
+              </div>
+
+              <div class="field">
+                <%= form.label :phone %>
+              </div>
+
+              <div class="field">
+                <%= form.text_field :phone %>
+              </div>
+
+              <div class="field">
+                <%= form.check_box :receive_mail %>
+                <%= form.label 'Would you like to receive emails from us?' %>
+              </div>
+              <div class="field">
+    
+              <div class="actions">
+                <%= form.submit 'Create', :class=> 'btn btn-primary' %>
+              </div>
+              <br>
+              <%= link_to 'Back', root_path,:class=> 'btn btn-secondary' %>
+        </div>
+      </div> 
+    </div>
+  </div>
+</div>
+<% end %>

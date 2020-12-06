@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  root 'subscribe#index'
+  root 'users#index'
    # Api Versions Routes
   # Api V1 ../api/v1/..
-
+  resources :users, only: [:new, :create, :show] , :path => 'leads'
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
-      post 'new_lead' => 'subscribe#new_lead'
+      post 'new_lead' => 'users#new_lead'
     end
 
   end
