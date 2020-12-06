@@ -1,24 +1,71 @@
-# README
+# Aweber ESP Integration - Ruby On rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-* Ruby version
+Aweber ESP is a backend integration with Ruby On Rails which uses the API provided by ESP to make the queries.
 
-* System dependencies
 
-* Configuration
+  - User creation via form.
+  - User creation via api.
+  - Cron Job for user subscription.
 
-* Database creation
 
-* Database initialization
+###  Aweber Documentation
 
-* How to run the test suite
+* [Aweber API](https://api.aweber.com/) - Aweber documentation page
+* [Aweber Dev Account](https://labs.aweber.com/) - Aweber page for developers account
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+### Installation
+ - Before start you need to install [redis](https://redis.io/topics/quickstart) in your local machine and [postgresql](https://gorails.com/setup/osx/10.15-catalina#database)
 
-* ...
+Clone the repository
+
+```sh
+$ git clone https://github.com/lscantillo/esp-aweber-integration
+$ cd esp-aweber-integration
+$ bundle install
+```
+
+Create local database and run the migrations
+
+```sh
+$ rails db:create
+$ rails db:migrate
+```
+### Run Rails server
+```sh
+$ rails server
+```
+### Run Sidekiq cron jobs services
+ - In an other command terminal run
+```sh
+$ bundle exec sidekiq
+```
+### Sidekiq Web Admin
+```sh
+ http://localhost:3000/sidekiq
+```
+ 
+# Usage
+ ### Web form 
+ - Go to http://localhost:3000/
+ 
+ ### API 
+ 
+- Go to http://localhost:3000/api/v1/new_lead
+
+ ##### POST Method
+ Content-type: application/json
+  Body Parameters
+ - name: string
+ - email: string
+ - phone: string
+ - receive_mail: true or false
+ 
+
+# Demo
+
+This applications was deploy in Heroku at https://esp-aweber-integration.herokuapp.com/
+
