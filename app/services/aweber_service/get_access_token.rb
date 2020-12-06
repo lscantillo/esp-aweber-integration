@@ -26,12 +26,12 @@ module AweberService
     private
 
     def set_params
-      @uri = 'https://auth.aweber.com'
-      @client_id = 'TO8sYTwXOeVK964wtbRPNnAxOlfiLxWs'
-      @client_secret = 'sxF5SBmgFABUGTbMkLCEcnnX3xwe1OgU'
-      @grant_type = 'refresh_token'
-      @refresh_token = 'RKqFc99WgHXlSGNBFYmWV6uj53q3FuDz'
-      @authorization = 'Basic VE84c1lUd1hPZVZLOTY0d3RiUlBObkF4T2xmaUx4V3M6c3hGNVNCbWdGQUJVR1RiTWtMQ0Vjbm5YM3h3ZTFPZ1U='
+      @uri = ENV['URI_AUTH']
+      @client_id = ENV['CLIENT_ID']
+      @client_secret = ENV['CLIENT_SECRET']
+      @grant_type = ENV['GRANT_TYPE']
+      @refresh_token = ENV['REFRESH_TOKEN']
+      @authorization = ENV['AUTHORIZACION_AUTH']
     end
     
   end
