@@ -1,0 +1,2 @@
+CREATE USER aweber_user;
+ALTER USER aweber_user WITH SUPERUSER;
