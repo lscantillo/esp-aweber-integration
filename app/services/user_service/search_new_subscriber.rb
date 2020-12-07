@@ -3,7 +3,6 @@
 module UserService
   class SearchNewSubscriber
     def initialize
-      
     end
 
     def call
@@ -11,9 +10,7 @@ module UserService
       @new_users.find_each do |user|
         AweberService::AddSubscriber.new(user).call
       end
-      
-      UserService::ChangeUserInfo.new().call
+      UserService::ChangeUserInfo.new.call
     end
-
   end
 end
