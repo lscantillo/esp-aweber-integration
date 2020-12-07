@@ -11,15 +11,14 @@ module AweberService
     end
 
     def call
-      uri = URI( @uri + '/oauth2/token')
+      uri = URI(@uri + '/oauth2/token')
       body = { :client_id => @client_id, :client_secret => @client_secret, :grant_type => @grant_type, :refresh_token => @refresh_token}
       response = HTTP.headers(:accept => "application/json", :Authorization => @authorization).post(uri,:json=> body)
       resp = response.body
       resp = JSON.parse(resp)
       token = resp['access_token']
       expiry = resp['expires_in']
-      #hacer job para eso
-      AweberService::SaveAccessToken.new(token,expiry).call
+      AweberService::SaveAccessToken.new(token, expiry).call
       token
     end
 
@@ -33,6 +32,5 @@ module AweberService
       @refresh_token = ENV['REFRESH_TOKEN']
       @authorization = ENV['AUTHORIZACION_AUTH']
     end
-    
   end
 end
