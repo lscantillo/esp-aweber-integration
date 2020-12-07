@@ -1,5 +1,3 @@
 class AccessToken < ApplicationRecord
-
  
-
 end

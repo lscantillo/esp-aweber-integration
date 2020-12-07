@@ -1,3 +1,4 @@
-aweber_job:
-  cron: "*/1 * * * *" #it will retrieve data every 1 minute
-  class: "AweberWorker"
+:schedule:
+  aweber_worker:
+    cron: "*/1 * * * *" #it will search and connect to Aweber every minute
+    class: "AweberWorker"

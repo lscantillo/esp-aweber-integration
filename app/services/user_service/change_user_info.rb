@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 module UserService
   class ChangeUserInfo
     def initialize
-      
     end
 
     def call
@@ -11,6 +12,5 @@ module UserService
         user.save
       end
     end
-
   end
 end
